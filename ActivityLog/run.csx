@@ -5,11 +5,10 @@
 using System.Net;
 using Newtonsoft.Json;
 using BackendUtilities;
-using System.Configuration;
 
 public static void Run(ActivityRecord req, TraceWriter log)
 {
-    var connectionString = ConfigurationManager.AppSettings["storageConnectionString"];
+    var connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["ClientActivity"].ConnectionString;
     var logger = new ActivityAzureLogger(connectionString);
 
     var entity = new ActivityEntity(req.SessionID, req.UserID)
