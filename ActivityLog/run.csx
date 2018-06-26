@@ -8,7 +8,7 @@ using BackendUtilities;
 
 public static void Run(ActivityRecord req, TraceWriter log)
 {
-    var logger = new ActivityAzureLogger("DefaultEndpointsProtocol=https;AccountName=bmacomputefunc;AccountKey=dbq1YoM+WvZXTGOgrwwZm9Xg3uDNYh1Yh3/J0DmhChrgx2tC7Yt0s2FMma9c8Jot39B8VBnUKGkQFK3rv3XM7w==;EndpointSuffix=core.windows.net");
+    var logger = new ActivityAzureLogger("");
 
     var entity = new ActivityEntity(req.SessionID, req.UserID)
             {
